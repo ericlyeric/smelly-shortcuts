@@ -3,9 +3,9 @@ import Sidebar from './common/Sidebar';
 
 function App() {
   return (
-    <div className="flex h-screen bg-gray-400">
+    <div className="flex h-screen">
       <Sidebar />
-      <div className="bg-gray-600 w-full">Main screen</div>
+      <div className="bg-gray-700 w-full"></div>
     </div>
   );
 }
