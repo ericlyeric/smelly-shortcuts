@@ -1,17 +1,17 @@
 import Main from './common/Main';
 import Sidebar from './common/Sidebar';
-import { ShortcutProvider } from './context/ShortcutContext';
-import { KeyboardProvider } from './context/KeyboardContext';
+import { SettingsProvider } from './context/SettingsContext';
+import { ShortcutsProvider } from './context/ShortcutsContext';
 
 function App() {
   return (
     <div className="flex h-screen">
-      <ShortcutProvider>
-        <KeyboardProvider>
+      <SettingsProvider>
+        <ShortcutsProvider>
           <Sidebar />
           <Main />
-        </KeyboardProvider>
-      </ShortcutProvider>
+        </ShortcutsProvider>
+      </SettingsProvider>
     </div>
   );
 }

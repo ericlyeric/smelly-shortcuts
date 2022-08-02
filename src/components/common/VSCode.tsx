@@ -3,9 +3,3 @@ const VSCode = () => {
 };
 
 export default VSCode;
-
-// const General = () => {
-//   return(
-
-//   )
-// }

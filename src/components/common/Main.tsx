@@ -1,14 +1,20 @@
-import { ShortcutIcons, useShortcutContext } from '../context/ShortcutContext';
+import { ShortcutIcons, useShortcutsContext } from '../context/ShortcutsContext';
 import Description from './Description';
+import Mac from './Mac';
+import Ubuntu from './Ubuntu';
 import VSCode from './VSCode';
+import Zsh from './Zsh';
 
 const Main = () => {
-  const { selected } = useShortcutContext();
+  const { shortcut } = useShortcutsContext();
 
   return (
     <div className="bg-gray-700 w-full">
-      {selected === ShortcutIcons.HOME ? <Description /> : null}
-      {selected === ShortcutIcons.VSCODE ? <VSCode /> : null}
+      {shortcut === ShortcutIcons.HOME ? <Description /> : null}
+      {shortcut === ShortcutIcons.VSCODE ? <VSCode /> : null}
+      {shortcut === ShortcutIcons.ZSH ? <Zsh /> : null}
+      {shortcut === ShortcutIcons.MAC ? <Mac /> : null}
+      {shortcut === ShortcutIcons.UBUNTU ? <Ubuntu /> : null}
     </div>
   );
 };
