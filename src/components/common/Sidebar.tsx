@@ -127,8 +127,8 @@ const SidebarSetting = ({ name, icon, type }: SidebarSettingProps) => {
   return (
     <li
       className={`flex flex-col z-10 px-[17px] py-2 cursor-pointer ${
-        settings[type] === name ? 'bg-gray-600' : ''
-      } bg-gray-500 hover:bg-gray-600`}
+        settings[type] === name ? 'bg-gray-600' : 'bg-gray-500'
+      }  hover:bg-gray-600`}
       onClick={() => setSettings({ ...settings, [type]: name })}
     >
       {icon}
