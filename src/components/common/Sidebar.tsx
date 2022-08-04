@@ -4,7 +4,7 @@ import { FaKeyboard, FaDesktop } from 'react-icons/fa';
 import { AiFillMacCommand, AiFillWindows } from 'react-icons/ai';
 import { FcLinux } from 'react-icons/fc';
 import { useShortcutsContext, ShortcutIcons } from '../context/ShortcutsContext';
-import { KeyboardIcons, SystemIcons, useSettingsContext } from '../context/SettingsContext';
+import { SystemIcons, useSystemContext } from '../context/SystemContext';
 
 const Sidebar = () => {
   return (
@@ -40,49 +40,25 @@ const Sidebar = () => {
         </div>
         <div className="flex flex-col flex-end">
           <ul className="flex flex-row">
-            <li className="peer p-[17px] py-2 text-gray-300 text-3xl hover:bg-gray-900">
+            <li className="peer px-[17px] py-2 text-gray-300 text-3xl hover:bg-gray-900">
               <FaDesktop />
             </li>
             <ul className="hidden peer-hover:flex hover:flex">
-              <SidebarSetting
+              <SidebarSystem
                 name={SystemIcons.MAC}
                 icon={
                   <AiFillMacCommand className="text-gray-300 text-3xl" title={SystemIcons.MAC} />
                 }
-                type="system"
               />
-              <SidebarSetting
+              <SidebarSystem
                 name={SystemIcons.LINUX}
                 icon={<FcLinux className="text-3xl" title={SystemIcons.LINUX} />}
-                type="system"
               />
-              <SidebarSetting
+              <SidebarSystem
                 name={SystemIcons.WINDOWS}
                 icon={
                   <AiFillWindows className="text-sky-700 text-3xl" title={SystemIcons.WINDOWS} />
                 }
-                type="system"
-              />
-            </ul>
-          </ul>
-          <ul className="flex flex-row">
-            <li className="peer p-[17px] py-2 text-gray-300 text-3xl hover:bg-gray-900">
-              <FaKeyboard />
-            </li>
-            <ul className="hidden peer-hover:flex hover:flex">
-              <SidebarSetting
-                name={SystemIcons.WINDOWS}
-                icon={
-                  <AiFillWindows className="text-sky-700 text-3xl" title={SystemIcons.WINDOWS} />
-                }
-                type="keyboard"
-              />
-              <SidebarSetting
-                name={SystemIcons.MAC}
-                icon={
-                  <AiFillMacCommand className="text-gray-300 text-3xl" title={SystemIcons.MAC} />
-                }
-                type="keyboard"
               />
             </ul>
           </ul>
@@ -115,21 +91,20 @@ const SidebarShortcut = ({ name, icon }: SidebarShortcutProps) => {
   );
 };
 
-interface SidebarSettingProps {
-  name: SystemIcons | KeyboardIcons;
+interface SidebarSystemProps {
+  name: SystemIcons;
   icon: React.ReactNode;
-  type: 'system' | 'keyboard';
 }
 
-const SidebarSetting = ({ name, icon, type }: SidebarSettingProps) => {
-  const { settings, setSettings } = useSettingsContext();
+const SidebarSystem = ({ name, icon }: SidebarSystemProps) => {
+  const { system, setSystem } = useSystemContext();
 
   return (
     <li
       className={`flex flex-col z-10 px-[17px] py-2 cursor-pointer ${
-        settings[type] === name ? 'bg-gray-600' : 'bg-gray-500'
+        system === name ? 'bg-gray-600' : 'bg-gray-500'
       }  hover:bg-gray-600`}
-      onClick={() => setSettings({ ...settings, [type]: name })}
+      onClick={() => setSystem(name)}
     >
       {icon}
     </li>

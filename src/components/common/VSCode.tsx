@@ -1,55 +1,74 @@
-import { SystemIcons, useSettingsContext } from '../context/SettingsContext';
-import { general, basicEditing, navigation, searchAndReplace } from '../../data/VSCode/windows';
+import { SystemIcons, useSystemContext } from '../context/SystemContext';
+import Table from './Table';
+import {
+  general,
+  basicEditing,
+  navigation,
+  searchAndReplace,
+  multiCursorAndSelection,
+  richLanguagesEditing,
+  editorManagement,
+  fileManagement,
+  display,
+  debug,
+  integratedTerminal,
+} from '../../data/VSCode/windows';
 
 const VSCode = () => {
-  const {
-    settings: { system },
-  } = useSettingsContext();
+  const { system } = useSystemContext();
 
   return (
     <>
       {system === SystemIcons.WINDOWS ? (
-        <>
-          <h2 className="text-gray-300">General</h2>
-          <Table data={general} />
-
-          <h2 className="text-gray-300">Basic Editing</h2>
-          <Table data={basicEditing} />
-
-          <h2 className="text-gray-300">Navigation</h2>
-          <Table data={navigation} />
-
-          <h2 className="text-gray-300">Search and Replace</h2>
-          <Table data={searchAndReplace} />
-        </>
+        <div className="flex flex-col flex-wrap h-full max-w-4xl">
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">General</h2>
+            <Table data={general} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Basic editing</h2>
+            <Table data={basicEditing} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Navigation</h2>
+            <Table data={navigation} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Search and replace</h2>
+            <Table data={searchAndReplace} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Multi-cursor and selection</h2>
+            <Table data={multiCursorAndSelection} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Rich languages editing</h2>
+            <Table data={richLanguagesEditing} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Editor management</h2>
+            <Table data={editorManagement} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">File management</h2>
+            <Table data={fileManagement} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Display</h2>
+            <Table data={display} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Debug</h2>
+            <Table data={debug} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Integrated terminal</h2>
+            <Table data={integratedTerminal} />
+          </div>
+        </div>
       ) : null}
     </>
   );
 };
 
 export default VSCode;
-
-interface ShortcutProp {
-  keys: Array<string>;
-  action: string;
-}
-interface TableProps {
-  data: Array<ShortcutProp>;
-}
-
-const Table = ({ data }: TableProps) => {
-  return (
-    <table className="border-collapse border border-slate-500">
-      <tbody className="text-xs text-gray-300">
-        {data.map((datum) => {
-          return (
-            <tr>
-              <td>{datum.keys.join('+')}</td>
-              <td>{datum.action}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-};

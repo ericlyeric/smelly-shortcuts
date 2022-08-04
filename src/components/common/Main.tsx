@@ -9,7 +9,7 @@ const Main = () => {
   const { shortcut } = useShortcutsContext();
 
   return (
-    <div className="bg-gray-700 w-full">
+    <div className="flex flex-wrap bg-gray-700 h-full w-full">
       {shortcut === ShortcutIcons.HOME ? <Description /> : null}
       {shortcut === ShortcutIcons.VSCODE ? <VSCode /> : null}
       {shortcut === ShortcutIcons.ZSH ? <Zsh /> : null}
