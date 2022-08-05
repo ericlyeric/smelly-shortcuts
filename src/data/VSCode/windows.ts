@@ -1,4 +1,4 @@
-export const general = [
+export const windowsGeneral = [
   {
     keys: ['F1'],
     action: 'Show command palette',
@@ -21,7 +21,7 @@ export const general = [
   },
 ];
 
-export const basicEditing = [
+export const windowsBasicEditing = [
   {
     keys: ['Ctrl', 'X'],
     action: 'Cut line',
@@ -96,7 +96,7 @@ export const basicEditing = [
   },
 ];
 
-export const navigation = [
+export const windowsNavigation = [
   {
     keys: ['Ctrl', 'G'],
     action: 'Go to Line...',
@@ -115,7 +115,7 @@ export const navigation = [
   },
 ];
 
-export const searchAndReplace = [
+export const windowsSearchAndReplace = [
   {
     keys: ['Ctrl', 'F'],
     action: 'Find',
@@ -150,7 +150,7 @@ export const searchAndReplace = [
   },
 ];
 
-export const multiCursorAndSelection = [
+export const windowsMultiCursorAndSelection = [
   {
     keys: ['Alt', 'Click'],
     action: 'Insert cursor',
@@ -173,7 +173,7 @@ export const multiCursorAndSelection = [
   },
 ];
 
-export const richLanguagesEditing = [
+export const windowsRichLanguagesEditing = [
   {
     keys: ['Ctrl', 'Space', 'Ctrl', 'I'],
     action: 'Trigger suggestion',
@@ -208,7 +208,7 @@ export const richLanguagesEditing = [
   },
 ];
 
-export const editorManagement = [
+export const windowsEditorManagement = [
   {
     keys: ['Ctrl', 'W'],
     action: 'Close Editor',
@@ -231,7 +231,7 @@ export const editorManagement = [
   },
 ];
 
-export const fileManagement = [
+export const windowsFileManagement = [
   {
     keys: ['Ctrl', 'N'],
     action: 'New file',
@@ -286,7 +286,7 @@ export const fileManagement = [
   },
 ];
 
-export const display = [
+export const windowsDisplay = [
   {
     keys: ['F11'],
     action: 'Toggle full screen',
@@ -325,7 +325,7 @@ export const display = [
   },
 ];
 
-export const debug = [
+export const windowsDebug = [
   {
     keys: ['F9'],
     action: 'Toggle breakpoint',
@@ -352,7 +352,7 @@ export const debug = [
   },
 ];
 
-export const integratedTerminal = [
+export const windowsIntegratedTerminal = [
   {
     keys: ['Ctrl', '`'],
     action: 'Show integrated terminal',
