@@ -15,8 +15,14 @@ import {
 } from '../../data/VSCode/windows';
 import {
   macBasicEditing,
+  macDebug,
+  macDisplay,
+  macEditorManagement,
+  macFileManagement,
   macGeneral,
+  macIntegratedTerminal,
   macMultiCursorAndSelection,
+  macNavigation,
   macRichLanguageEditing,
   macSearchAndReplace,
 } from '../../data/VSCode/mac';
@@ -86,7 +92,7 @@ const VSCode = () => {
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Navigation</h2>
-            <Table data={windowsNavigation} />
+            <Table data={macNavigation} />
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Search and replace</h2>
@@ -102,23 +108,23 @@ const VSCode = () => {
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Editor management</h2>
-            <Table data={windowsEditorManagement} />
+            <Table data={macEditorManagement} />
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">File management</h2>
-            <Table data={windowsFileManagement} />
+            <Table data={macFileManagement} />
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Display</h2>
-            <Table data={windowsDisplay} />
+            <Table data={macDisplay} />
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Debug</h2>
-            <Table data={windowsDebug} />
+            <Table data={macDebug} />
           </div>
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Integrated terminal</h2>
-            <Table data={windowsIntegratedTerminal} />
+            <Table data={macIntegratedTerminal} />
           </div>
         </div>
       ) : null}

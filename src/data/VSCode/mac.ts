@@ -177,14 +177,188 @@ export const macRichLanguageEditing = [
   },
 ];
 
-export const navigation = [];
+export const macNavigation = [
+  {
+    keys: ['⌃', 'G'],
+    action: 'Go to line...',
+  },
+  {
+    keys: ['F8'],
+    action: 'Go to next error or warning',
+  },
+  {
+    keys: ['⇧', 'F8'],
+    action: 'Go to previous error or warning',
+  },
+  {
+    keys: ['⌃', '-/⇧-'],
+    action: 'Go back/forward',
+  },
+];
 
-export const editorManagement = [];
+export const macEditorManagement = [
+  {
+    keys: ['⌘', 'W'],
+    action: 'Close editor',
+  },
+  {
+    keys: ['⌘', 'K F'],
+    action: 'Close folder',
+  },
+  {
+    keys: ['⌘', '\\'],
+    action: 'Split editor',
+  },
+  {
+    keys: ['⌘', 'K', '⇧', '⌘', '←/→'],
+    action: 'Move editor left/right',
+  },
+];
 
-export const fileManagement = [];
+export const macFileManagement = [
+  {
+    keys: ['⌘', 'N'],
+    action: 'New file',
+  },
+  {
+    keys: ['⌘', 'O'],
+    action: 'Open file...',
+  },
+  {
+    keys: ['⌘', 'S'],
+    action: 'Save',
+  },
+  {
+    keys: ['⇧', '⌘', 'S'],
+    action: 'Save as...',
+  },
+  {
+    keys: ['⌥', '⌘', 'S'],
+    action: 'Save all',
+  },
+  {
+    keys: ['⌘', 'W'],
+    action: 'Close',
+  },
+  {
+    keys: ['⌘', 'K', '⌘', 'W'],
+    action: 'Close all',
+  },
+  {
+    keys: ['⇧', '⌘', 'T'],
+    action: 'Reopen closed editor',
+  },
+  {
+    keys: ['⌃', 'Tab'],
+    action: 'Open next',
+  },
+  {
+    keys: ['⌃', '⇧', 'Tab'],
+    action: 'Open previous',
+  },
+  {
+    keys: ['⌘', 'K P'],
+    action: 'Copy path of active file',
+  },
+  {
+    keys: ['⌘', 'K R'],
+    action: 'Reveal active file in Finder',
+  },
+  {
+    keys: ['⌘', 'K O'],
+    action: 'Show active file in new window/instance',
+  },
+];
 
-export const display = [];
+export const macDisplay = [
+  {
+    keys: ['⌃', '⌘', 'F'],
+    action: 'Toggle full screen',
+  },
+  {
+    keys: ['⌥', '⌘', '0'],
+    action: 'Toggle editor layout (horizontal/vertical)',
+  },
+  {
+    keys: ['⌘', 'B'],
+    action: 'Toggle sidebar visibility',
+  },
+  {
+    keys: ['⇧', '⌘', 'E'],
+    action: 'Show explorer / Toggle focus',
+  },
+  {
+    keys: ['⇧', '⌘', 'F'],
+    action: 'Show search',
+  },
+  {
+    keys: ['^', '⇧', 'G'],
+    action: 'Show source control',
+  },
+  {
+    keys: ['⇧', '⌘', 'D'],
+    action: 'Show debug',
+  },
+  {
+    keys: ['⇧', '⌘', 'X'],
+    action: 'Show Extensions',
+  },
+  {
+    keys: ['⇧', '⌘', 'V'],
+    action: 'Open markdown preview',
+  },
+];
 
-export const debug = [];
+export const macDebug = [
+  {
+    keys: ['F9'],
+    action: 'Toggle breakpoint',
+  },
+  {
+    keys: ['F5'],
+    action: 'Start/Continue',
+  },
+  {
+    keys: ['⇧', 'F5'],
+    action: 'Stop',
+  },
+  {
+    keys: ['F11'],
+    action: 'Step into',
+  },
+  {
+    keys: ['⇧', 'F11'],
+    action: 'Step out',
+  },
+  {
+    keys: ['F10'],
+    action: 'Step over',
+  },
+];
 
-export const integratedTerminal = [];
+export const macIntegratedTerminal = [
+  {
+    keys: ['^', '`'],
+    action: 'Show integrated terminal',
+  },
+  {
+    keys: ['^', '⇧', '`'],
+    action: 'Create new terminal',
+  },
+  {
+    keys: ['⌘', 'C'],
+    action: 'Copy selection',
+  },
+  {
+    keys: ['⌘', '↑ / ↓'],
+    action: 'Scroll up/down',
+  },
+  {
+    keys: ['PgUp / PgDn'],
+    action: 'Scroll page up/down',
+  },
+  {
+    keys: ['⌘', 'Home / End'],
+    action: 'Scroll to top/bottom',
+  },
+];
