@@ -12,7 +12,7 @@ import {
   windowsDisplay,
   windowsDebug,
   windowsIntegratedTerminal,
-} from '../../data/VSCode/windows';
+} from '../../data/vsCode/windows';
 import {
   macBasicEditing,
   macDebug,
@@ -25,7 +25,7 @@ import {
   macNavigation,
   macRichLanguageEditing,
   macSearchAndReplace,
-} from '../../data/VSCode/mac';
+} from '../../data/vsCode/mac';
 import {
   linuxBasicEditing,
   linuxDebug,
@@ -38,7 +38,7 @@ import {
   linuxNavigation,
   linuxRichLanguageEditing,
   linuxSearchAndReplace,
-} from '../../data/VSCode/linux';
+} from '../../data/vsCode/linux';
 
 const VSCode = () => {
   const { system } = useSystemContext();
