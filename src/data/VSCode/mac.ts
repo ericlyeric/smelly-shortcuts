@@ -198,10 +198,6 @@ export const macNavigation = [
 
 export const macEditorManagement = [
   {
-    keys: ['⌘', 'W'],
-    action: 'Close editor',
-  },
-  {
     keys: ['⌘', 'K F'],
     action: 'Close folder',
   },
@@ -235,10 +231,6 @@ export const macFileManagement = [
   {
     keys: ['⌥', '⌘', 'S'],
     action: 'Save all',
-  },
-  {
-    keys: ['⌘', 'W'],
-    action: 'Close',
   },
   {
     keys: ['⌘', 'K', '⌘', 'W'],

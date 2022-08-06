@@ -1,12 +1,14 @@
 import React from 'react';
 import { SiVisualstudiocode, SiWindowsterminal, SiApple, SiUbuntu } from 'react-icons/si';
-import { FaKeyboard, FaDesktop } from 'react-icons/fa';
+import { FaDesktop } from 'react-icons/fa';
 import { AiFillMacCommand, AiFillWindows } from 'react-icons/ai';
 import { FcLinux } from 'react-icons/fc';
 import { useShortcutsContext, ShortcutIcons } from '../context/ShortcutsContext';
 import { SystemIcons, useSystemContext } from '../context/SystemContext';
 
 const Sidebar = () => {
+  const { shortcut } = useShortcutsContext();
+
   return (
     <>
       <div className="flex flex-col justify-between bg-gray-800 w-16">
@@ -44,22 +46,28 @@ const Sidebar = () => {
               <FaDesktop />
             </li>
             <ul className="hidden peer-hover:flex hover:flex">
-              <SidebarSystem
-                name={SystemIcons.MAC}
-                icon={
-                  <AiFillMacCommand className="text-gray-300 text-3xl" title={SystemIcons.MAC} />
-                }
-              />
-              <SidebarSystem
-                name={SystemIcons.LINUX}
-                icon={<FcLinux className="text-3xl" title={SystemIcons.LINUX} />}
-              />
-              <SidebarSystem
-                name={SystemIcons.WINDOWS}
-                icon={
-                  <AiFillWindows className="text-sky-700 text-3xl" title={SystemIcons.WINDOWS} />
-                }
-              />
+              {shortcut === ShortcutIcons.UBUNTU ? null : (
+                <SidebarSystem
+                  name={SystemIcons.MAC}
+                  icon={
+                    <AiFillMacCommand className="text-gray-300 text-3xl" title={SystemIcons.MAC} />
+                  }
+                />
+              )}
+              {shortcut === ShortcutIcons.MAC ? null : (
+                <SidebarSystem
+                  name={SystemIcons.LINUX}
+                  icon={<FcLinux className="text-3xl" title={SystemIcons.LINUX} />}
+                />
+              )}
+              {shortcut === ShortcutIcons.VSCODE || shortcut === ShortcutIcons.ZSH ? (
+                <SidebarSystem
+                  name={SystemIcons.WINDOWS}
+                  icon={
+                    <AiFillWindows className="text-sky-700 text-3xl" title={SystemIcons.WINDOWS} />
+                  }
+                />
+              ) : null}
             </ul>
           </ul>
         </div>
@@ -77,13 +85,24 @@ interface SidebarShortcutProps {
 
 const SidebarShortcut = ({ name, icon }: SidebarShortcutProps) => {
   const { shortcut, setShortcut } = useShortcutsContext();
+  const { setSystem } = useSystemContext();
+
+  const handleSelectShortcut = (name: ShortcutIcons) => {
+    if (name === ShortcutIcons.MAC) {
+      setSystem(SystemIcons.MAC);
+    }
+    if (name === ShortcutIcons.UBUNTU) {
+      setSystem(SystemIcons.LINUX);
+    }
+    setShortcut(name);
+  };
 
   return (
     <li
       className={`flex justify-center py-3 cursor-pointer ${
         shortcut === name ? 'bg-gray-900 ' : ''
       } hover:bg-gray-900`}
-      onClick={() => setShortcut(name)}
+      onClick={() => handleSelectShortcut(name)}
       title={name}
     >
       {icon}

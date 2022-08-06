@@ -26,6 +26,19 @@ import {
   macRichLanguageEditing,
   macSearchAndReplace,
 } from '../../data/VSCode/mac';
+import {
+  linuxBasicEditing,
+  linuxDebug,
+  linuxDisplay,
+  linuxEditorManagement,
+  linuxFileManagement,
+  linuxGeneral,
+  linuxIntegratedTerminal,
+  linuxMultiCursorAndSelection,
+  linuxNavigation,
+  linuxRichLanguageEditing,
+  linuxSearchAndReplace,
+} from '../../data/VSCode/linux';
 
 const VSCode = () => {
   const { system } = useSystemContext();
@@ -125,6 +138,54 @@ const VSCode = () => {
           <div className="mx-2 my-1">
             <h2 className="text-gray-300">Integrated terminal</h2>
             <Table data={macIntegratedTerminal} />
+          </div>
+        </div>
+      ) : null}
+      {system === SystemIcons.LINUX ? (
+        <div className="flex flex-col flex-wrap h-full max-w-4xl m-2">
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">General</h2>
+            <Table data={linuxGeneral} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Basic editing</h2>
+            <Table data={linuxBasicEditing} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Navigation</h2>
+            <Table data={linuxNavigation} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Search and replace</h2>
+            <Table data={linuxSearchAndReplace} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Multi-cursor and selection</h2>
+            <Table data={linuxMultiCursorAndSelection} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Rich languages editing</h2>
+            <Table data={linuxRichLanguageEditing} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Editor management</h2>
+            <Table data={linuxEditorManagement} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">File management</h2>
+            <Table data={linuxFileManagement} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Display</h2>
+            <Table data={linuxDisplay} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Debug</h2>
+            <Table data={linuxDebug} />
+          </div>
+          <div className="mx-2 my-1">
+            <h2 className="text-gray-300">Integrated terminal</h2>
+            <Table data={linuxIntegratedTerminal} />
           </div>
         </div>
       ) : null}

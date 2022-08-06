@@ -1,18 +1,18 @@
-export const windowsGeneral = [
+export const linuxGeneral = [
   {
     keys: ['F1'],
     action: 'Show command palette',
   },
   {
     keys: ['Ctrl', 'P'],
-    action: 'Quick Open, Go to File...',
+    action: 'Quick open, Go to file...',
   },
   {
     keys: ['Ctrl', 'Shift', 'N'],
     action: 'New window/instance',
   },
   {
-    keys: ['Ctrl', 'Shift', 'W'],
+    keys: ['Ctrl', 'W'],
     action: 'Close window/instance',
   },
   {
@@ -21,7 +21,7 @@ export const windowsGeneral = [
   },
 ];
 
-export const windowsBasicEditing = [
+export const linuxBasicEditing = [
   {
     keys: ['Ctrl', 'X'],
     action: 'Cut line',
@@ -33,10 +33,6 @@ export const windowsBasicEditing = [
   {
     keys: ['Alt', '↑ / ↓'],
     action: 'Move line up/down',
-  },
-  {
-    keys: ['Shift', 'Alt', '↑ / ↓'],
-    action: 'Copy line up/down',
   },
   {
     keys: ['Ctrl', 'Shift', 'K'],
@@ -56,22 +52,18 @@ export const windowsBasicEditing = [
   },
   {
     keys: ['Ctrl', '] / ['],
-    action: 'Indent/outdent line',
+    action: 'Indent/Outdent line',
   },
   {
     keys: ['Home / End'],
     action: 'Go to beginning/end of line',
   },
   {
-    keys: ['Ctrl', 'Home'],
-    action: 'Go to the beginning of file',
+    keys: ['Ctrl', 'Home / End'],
+    action: 'Go to beginning/end of file',
   },
   {
-    keys: ['Ctrl', 'End'],
-    action: 'Go to end of file',
-  },
-  {
-    keys: ['Ctrl', '↑ / ↓'],
+    keys: ['Ctrl', ' ↑ / ↓ '],
     action: 'Scroll line up/down',
   },
   {
@@ -91,15 +83,15 @@ export const windowsBasicEditing = [
     action: 'Toggle line comment',
   },
   {
-    keys: ['Shift', 'Alt', 'A'],
+    keys: ['Ctrl', 'Shift', 'A'],
     action: 'Toggle block comment',
   },
 ];
 
-export const windowsNavigation = [
+export const linuxNavigation = [
   {
     keys: ['Ctrl', 'G'],
-    action: 'Go to Line...',
+    action: 'Go to line...',
   },
   {
     keys: ['F8'],
@@ -110,12 +102,16 @@ export const windowsNavigation = [
     action: 'Go to previous error or warning',
   },
   {
-    keys: ['Alt', '← / →'],
-    action: 'Go back / forward',
+    keys: ['Ctrl', 'Alt', '-'],
+    action: 'Go back',
+  },
+  {
+    keys: ['Ctrl', 'Shift', '-'],
+    action: 'Go forward',
   },
 ];
 
-export const windowsSearchAndReplace = [
+export const linuxSearchAndReplace = [
   {
     keys: ['Ctrl', 'F'],
     action: 'Find',
@@ -136,27 +132,15 @@ export const windowsSearchAndReplace = [
     keys: ['Alt', 'Enter'],
     action: 'Select all occurrences of Find match',
   },
-  {
-    keys: ['Alt', 'C'],
-    action: 'Toggle case-sensitive',
-  },
-  {
-    keys: ['Alt', 'R'],
-    action: 'Toggle regex',
-  },
-  {
-    keys: ['Alt', 'W'],
-    action: 'Toggle whole world',
-  },
 ];
 
-export const windowsMultiCursorAndSelection = [
+export const linuxMultiCursorAndSelection = [
   {
-    keys: ['Alt', 'Click'],
+    keys: ['Alt', 'click'],
     action: 'Insert cursor',
   },
   {
-    keys: ['Ctrl', 'Alt', '↑ / ↓'],
+    keys: ['Shift', 'Alt', '↑ / ↓'],
     action: 'Insert cursor above/below',
   },
   {
@@ -173,9 +157,9 @@ export const windowsMultiCursorAndSelection = [
   },
 ];
 
-export const windowsRichLanguagesEditing = [
+export const linuxRichLanguageEditing = [
   {
-    keys: ['Ctrl', 'Space', 'Ctrl', 'I'],
+    keys: ['Ctrl', 'Space'],
     action: 'Trigger suggestion',
   },
   {
@@ -183,16 +167,12 @@ export const windowsRichLanguagesEditing = [
     action: 'Trigger parameter hints',
   },
   {
-    keys: ['Shift', 'Alt', 'F'],
+    keys: ['Ctrl', 'Shift', 'I'],
     action: 'Format document',
   },
   {
-    keys: ['Ctrl', 'K F'],
-    action: 'Format selection',
-  },
-  {
     keys: ['F12'],
-    action: 'Go to Definition',
+    action: 'Go to definition',
   },
   {
     keys: ['Ctrl', '.'],
@@ -208,7 +188,7 @@ export const windowsRichLanguagesEditing = [
   },
 ];
 
-export const windowsEditorManagement = [
+export const linuxEditorManagement = [
   {
     keys: ['Ctrl', 'K F'],
     action: 'Close folder',
@@ -222,12 +202,12 @@ export const windowsEditorManagement = [
     action: 'Move editor left',
   },
   {
-    keys: ['Ctrl', 'Shift', 'PgDn'],
+    keys: ['Ctrl', 'Shift', 'PgDown'],
     action: 'Move editor right',
   },
 ];
 
-export const windowsFileManagement = [
+export const linuxFileManagement = [
   {
     keys: ['Ctrl', 'N'],
     action: 'New file',
@@ -243,14 +223,6 @@ export const windowsFileManagement = [
   {
     keys: ['Ctrl', 'Shift', 'S'],
     action: 'Save as...',
-  },
-  {
-    keys: ['Ctrl', 'K S'],
-    action: 'Save all',
-  },
-  {
-    keys: ['Ctrl', 'F4'],
-    action: 'Close',
   },
   {
     keys: ['Ctrl', 'K', 'Ctrl', 'W'],
@@ -282,7 +254,7 @@ export const windowsFileManagement = [
   },
 ];
 
-export const windowsDisplay = [
+export const linuxDisplay = [
   {
     keys: ['F11'],
     action: 'Toggle full screen',
@@ -321,18 +293,14 @@ export const windowsDisplay = [
   },
 ];
 
-export const windowsDebug = [
+export const linuxDebug = [
   {
     keys: ['F9'],
     action: 'Toggle breakpoint',
   },
   {
     keys: ['F5'],
-    action: 'Start/continue',
-  },
-  {
-    keys: ['Shift', 'F5'],
-    action: 'Stop',
+    action: 'Start / Continue',
   },
   {
     keys: ['F11'],
@@ -340,15 +308,19 @@ export const windowsDebug = [
   },
   {
     keys: ['Shift', 'F11'],
-    action: 'Step out',
+    action: 'Step into/out',
   },
   {
     keys: ['F10'],
     action: 'Step over',
   },
+  {
+    keys: ['Shift', 'F5'],
+    action: 'Stop',
+  },
 ];
 
-export const windowsIntegratedTerminal = [
+export const linuxIntegratedTerminal = [
   {
     keys: ['Ctrl', '`'],
     action: 'Show integrated terminal',
@@ -358,15 +330,15 @@ export const windowsIntegratedTerminal = [
     action: 'Create new terminal',
   },
   {
-    keys: ['Ctrl', 'C'],
+    keys: ['Ctrl', 'Shift', 'C'],
     action: 'Copy selection',
   },
   {
-    keys: ['Ctrl', 'V'],
+    keys: ['Ctrl', 'Shift', 'V'],
     action: 'Paste into active terminal',
   },
   {
-    keys: ['Ctrl', '↑ / ↓'],
+    keys: ['Ctrl', 'Shift', '↑ / ↓'],
     action: 'Scroll up/down',
   },
   {
@@ -374,7 +346,7 @@ export const windowsIntegratedTerminal = [
     action: 'Scroll page up/down',
   },
   {
-    keys: ['Ctrl', 'Home / End'],
+    keys: ['Shift', 'Home / End'],
     action: 'Scroll to top/bottom',
   },
 ];
