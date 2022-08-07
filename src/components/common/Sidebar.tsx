@@ -60,7 +60,7 @@ const Sidebar = () => {
                   icon={<FcLinux className="text-3xl" title={SystemIcons.LINUX} />}
                 />
               )}
-              {shortcut === ShortcutIcons.VSCODE || shortcut === ShortcutIcons.ZSH ? (
+              {shortcut === ShortcutIcons.VSCODE ? (
                 <SidebarSystem
                   name={SystemIcons.WINDOWS}
                   icon={
@@ -93,6 +93,9 @@ const SidebarShortcut = ({ name, icon }: SidebarShortcutProps) => {
     }
     if (name === ShortcutIcons.UBUNTU) {
       setSystem(SystemIcons.LINUX);
+    }
+    if (name === ShortcutIcons.ZSH) {
+      setSystem(SystemIcons.MAC);
     }
     setShortcut(name);
   };
